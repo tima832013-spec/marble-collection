@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:marble-collection.com)",
+      "WebFetch(domain:ru.age-of-innocence.com)",
+      "Bash(git --version)",
+      "Bash(gh --version)",
+      "Bash(export PATH=\"/c/Program Files/GitHub CLI:$PATH\")",
+      "Bash(gh auth:*)"
+    ]
+  }
+}
