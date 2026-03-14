@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог кашпо — Marble Collection</title>
+    <meta name="description" content="Каталог дизайнерских кашпо с эффектом натурального камня. Эксклюзивные серии, кашпо для дома и улицы.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/catalog.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header header--dark" id="header">
+        <div class="header__container">
+            <button class="header__burger" id="burger" aria-label="Меню">
+                <span></span><span></span><span></span>
+            </button>
+            <a href="index.html" class="header__logo">
+                <img src="https://static.tildacdn.com/tild3435-6434-4135-b539-343035356539/logo_2.png" alt="Marble Collection" class="header__logo-img">
+            </a>
+            <nav class="header__nav" id="nav">
+                <ul class="header__menu">
+                    <li class="header__menu-item has-submenu">
+                        <a href="catalog.html" class="active">Каталог</a>
+                        <ul class="header__submenu">
+                            <li><a href="catalog.html">Весь каталог</a></li>
+                            <li><a href="catalog.html?cat=bestsellers">Популярные</a></li>
+                            <li><a href="catalog.html?cat=exclusive">Эксклюзивная серия</a></li>
+                            <li><a href="catalog.html?cat=sets">С подставкой</a></li>
+                            <li><a href="catalog.html?cat=outdoor">Для улицы</a></li>
+                            <li><a href="catalog.html?cat=indoor">Для помещений</a></li>
+                        </ul>
+                    </li>
+                    <li class="header__menu-item"><a href="index.html#custom-order">Кашпо на заказ</a></li>
+                    <li class="header__menu-item"><a href="index.html#about">О нас</a></li>
+                    <li class="header__menu-item"><a href="index.html#delivery">Покупателям</a></li>
+                    <li class="header__menu-item"><a href="index.html#reviews">Отзывы</a></li>
+                </ul>
+            </nav>
+            <div class="header__actions">
+                <a href="tel:+79119205450" class="header__phone">+7 911 920 54 50</a>
+                <button class="header__cart-btn" id="cartToggle" aria-label="Корзина">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+                    <span class="header__cart-count">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav -->
+    <div class="mobile-nav" id="mobileNav">
+        <div class="mobile-nav__content">
+            <ul class="mobile-nav__menu">
+                <li><a href="catalog.html" class="mobile-nav__link">Каталог</a></li>
+                <li><a href="index.html#custom-order" class="mobile-nav__link">Кашпо на заказ</a></li>
+                <li><a href="index.html#about" class="mobile-nav__link">О нас</a></li>
+                <li><a href="index.html#delivery" class="mobile-nav__link">Доставка</a></li>
+                <li><a href="index.html#reviews" class="mobile-nav__link">Отзывы</a></li>
+                <li><a href="index.html#contacts" class="mobile-nav__link">Контакты</a></li>
+            </ul>
+            <div class="mobile-nav__footer">
+                <a href="tel:+79119205450" class="mobile-nav__phone">+7 911 920 54 50</a>
+                <p class="mobile-nav__hours">Принимаем заказы 24/7</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Breadcrumbs -->
+    <section class="breadcrumbs">
+        <div class="container">
+            <ul class="breadcrumbs__list">
+                <li><a href="index.html">Главная</a></li>
+                <li><span id="breadcrumbCurrent">Каталог</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Catalog Hero -->
+    <section class="catalog-hero">
+        <div class="container">
+            <h1 class="catalog-hero__title" id="catalogTitle">Каталог кашпо</h1>
+            <p class="catalog-hero__desc">Дизайнерские кашпо с эффектом натурального камня для дома, офиса и улицы</p>
+        </div>
+    </section>
+
+    <!-- Filters -->
+    <section class="catalog-filters">
+        <div class="container">
+            <div class="catalog-filters__inner">
+                <div class="catalog-filters__tabs">
+                    <button class="filter-tab active" data-filter="all">Все</button>
+                    <button class="filter-tab" data-filter="bestsellers">Популярные</button>
+                    <button class="filter-tab" data-filter="exclusive">Эксклюзивная серия</button>
+                    <button class="filter-tab" data-filter="sets">С подставкой</button>
+                    <button class="filter-tab" data-filter="outdoor">Для улицы</button>
+                    <button class="filter-tab" data-filter="indoor">Для помещений</button>
+                    <button class="filter-tab" data-filter="accessories">Сопутствующие</button>
+                </div>
+                <div class="catalog-filters__sort">
+                    <select id="sortSelect" class="catalog-sort">
+                        <option value="default">По умолчанию</option>
+                        <option value="price-asc">Цена: по возрастанию</option>
+                        <option value="price-desc">Цена: по убыванию</option>
+                        <option value="name">По названию</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Grid -->
+    <section class="catalog-grid">
+        <div class="container">
+            <div class="catalog-grid__items" id="productGrid">
+
+                <!-- Product 1 -->
+                <div class="catalog-card" data-category="exclusive bestsellers" data-price="4500" data-name="Marble Classic">
+                    <a href="product.html?id=1" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3839-3464-4736-b039-343136306665/23-10-20215858_7.jpg" alt="Marble Classic">
+                            <div class="catalog-card__badge">Хит</div>
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Marble Classic</h3>
+                            <p class="catalog-card__desc">Кашпо с эффектом белого мрамора</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">4 500 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="catalog-card" data-category="exclusive bestsellers" data-price="5200" data-name="Nero">
+                    <a href="product.html?id=2" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3065-3234-4261-a630-366238353736/23-10-20215858_8.jpg" alt="Nero">
+                            <div class="catalog-card__badge">Хит</div>
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Nero</h3>
+                            <p class="catalog-card__desc">Тёмное кашпо с золотыми прожилками</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">5 200 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="catalog-card" data-category="sets indoor" data-price="7800" data-name="Bianco Set">
+                    <a href="product.html?id=3" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3138-3734-4764-a266-333436653661/23-10-20215882_10.jpg" alt="Bianco Set">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Bianco Set</h3>
+                            <p class="catalog-card__desc">Комплект кашпо с подставкой</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">7 800 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="catalog-card" data-category="outdoor bestsellers" data-price="6300" data-name="Verde">
+                    <a href="product.html?id=4" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3739-3662-4331-b933-666434383364/23-10-20215868_4.jpg" alt="Verde">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Verde</h3>
+                            <p class="catalog-card__desc">Кашпо для уличных растений</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">6 300 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 5 -->
+                <div class="catalog-card" data-category="indoor bestsellers" data-price="3900" data-name="Grigio">
+                    <a href="product.html?id=5" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3530-6334-4138-a330-303737376139/23-10-20215658_2.jpg" alt="Grigio">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Grigio</h3>
+                            <p class="catalog-card__desc">Серое кашпо для интерьера</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">3 900 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 6 -->
+                <div class="catalog-card" data-category="exclusive indoor" data-price="4100" data-name="Rosso">
+                    <a href="product.html?id=6" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild6666-3266-4164-b531-336464333361/ChatGPT_Image_Mar_13.png" alt="Rosso">
+                            <div class="catalog-card__badge catalog-card__badge--new">Новинка</div>
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Rosso</h3>
+                            <p class="catalog-card__desc">Терракотовое кашпо ручной работы</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">4 100 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 7 -->
+                <div class="catalog-card" data-category="sets indoor" data-price="8500" data-name="Duo Marble">
+                    <a href="product.html?id=7" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3261-3065-4865-a433-346536343331/ChatGPT_Image_Mar_13.png" alt="Duo Marble">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Duo Marble</h3>
+                            <p class="catalog-card__desc">Набор из двух кашпо с подставкой</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">8 500 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 8 -->
+                <div class="catalog-card" data-category="outdoor" data-price="9200" data-name="Grande Outdoor">
+                    <a href="product.html?id=8" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild3362-3565-4265-a465-353361343031/Frame_40.png" alt="Grande Outdoor">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Grande Outdoor</h3>
+                            <p class="catalog-card__desc">Большое кашпо для террасы</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">9 200 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Product 9 -->
+                <div class="catalog-card" data-category="accessories" data-price="1200" data-name="Подставка Wood">
+                    <a href="product.html?id=9" class="catalog-card__link">
+                        <div class="catalog-card__image">
+                            <img src="https://static.tildacdn.com/tild6337-6135-4262-b234-383131343164/Frame_437.png" alt="Подставка Wood">
+                            <button class="catalog-card__wishlist" aria-label="В избранное">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg>
+                            </button>
+                        </div>
+                        <div class="catalog-card__info">
+                            <h3 class="catalog-card__name">Подставка Wood</h3>
+                            <p class="catalog-card__desc">Деревянная подставка под кашпо</p>
+                            <div class="catalog-card__bottom">
+                                <span class="catalog-card__price">1 200 ₽</span>
+                                <button class="catalog-card__cart">В корзину</button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- Empty state -->
+            <div class="catalog-empty" id="catalogEmpty" style="display:none">
+                <p>В этой категории пока нет товаров</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo -->
+    <section class="catalog-promo">
+        <div class="container">
+            <div class="catalog-promo__inner">
+                <div class="catalog-promo__content">
+                    <h2>Скидка 20% по промокоду <strong>FRIDAY</strong></h2>
+                    <p>При покупке от 5 товаров — дополнительные скидки 5-10%</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__inner">
+                <div class="footer__col footer__col--brand">
+                    <a href="index.html" class="footer__logo">
+                        <img src="https://static.tildacdn.com/tild3435-6434-4135-b539-343035356539/logo_2.png" alt="Marble Collection">
+                    </a>
+                    <p class="footer__desc">Дизайнерские кашпо с эффектом натурального камня.</p>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Каталог</h4>
+                    <ul class="footer__links">
+                        <li><a href="catalog.html">Весь каталог</a></li>
+                        <li><a href="catalog.html?cat=bestsellers">Популярные</a></li>
+                        <li><a href="catalog.html?cat=exclusive">Эксклюзивная серия</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Информация</h4>
+                    <ul class="footer__links">
+                        <li><a href="index.html#about">О компании</a></li>
+                        <li><a href="index.html#delivery">Доставка</a></li>
+                        <li><a href="index.html#reviews">Отзывы</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <h4 class="footer__col-title">Контакты</h4>
+                    <ul class="footer__links">
+                        <li><a href="tel:+79119205450">+7 911 920 54 50</a></li>
+                        <li><a href="https://wa.me/79119205450">WhatsApp</a></li>
+                        <li><span>Заказы 24/7</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2026 Marble Collection. Все права защищены.</p>
+                <div class="footer__legal">
+                    <a href="#">Политика конфиденциальности</a>
+                    <a href="#">Оферта</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/catalog.js"></script>
+</body>
+</html>
